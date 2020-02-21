@@ -1,0 +1,52 @@
+%%%%% Python Scripts with brief description by anthony sulak
+
+generate_data1: generates and saves data for overlap due to shear, area var., and turbulence 
+(note: this script is a combination of "shear_center_of_mass1.py" and "convexhull1.py")
+added shear_cal1.py (older method for updraft)
+added shift_cld1.py to this script so updraft can be calculated
+NOTE: overlap is computed C_v/C_p in script and inverted for usage
+
+shift_cld1.py: calculates "shift distance" so that we can calculate the updraft speed using wind differential, cld ht, and shift distance (this method should be used to calculate updraft and not any other method)
+
+tempfile1.py: plots more important graphs (e.g. 2d histograms of overlap...)
+
+cal_factors2.py: calculates the contribution of each factor based on cld height; plots stacked bar graph
+
+shear_cal1.npy: generates and saves updraft and wind differentials (older method for updraft)
+
+convexhull1.py: generates and saves overlap due to convex hull clds with ht >100m 
+
+Cloud_Cover1.py: plots cld cover graphs
+
+areaz_with_median1.py: generates and saves overlap due to area variability using geo mean
+
+check1.py: used to concatenate data (namely for bomex)
+
+shear_center_of_mass1.py: generates and saves the overlap due to shear and overlap due to area var.
+
+overlap_width_cv.py: calculates shear (in conjuction w/ analytical model)
+
+percentcloud2.py: calculates overlap, vol, proj area, ht of chopped clouds; plots overlap of clds with diff chopped hts
+
+graph3d_2.py: graphs a particular cld either in 3d of 2d 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Description of npy files: 
+(notice overlap calculations from scripts are C_v / C_p)
+overlap_no_shear_dataset*.npy: overlap of shifted cld, for all clds
+area_z_ratio_dataset*.npy: avg area over max area, for all clds
+overlap_convex_dataset8.npy: overlap of convex hull cld, for clds ht>100m
+shear_sum_dataset*.npy: sum of gradients of a cld, for all 
+shearTB_vel_dataset*.npy: difference of shear at top and bottom of cld, for all clds
+shift_distance dataset8.npy: distance cld is shifted to align center of masses, for clds ht>50m
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Note: there is a collection of npy files (gen. data) that are loaded in some of the above mention python scripts 
+
+Note: Some scripts that generate data or calculates multiples thing (such as percentcloud2.py) may take awhile to run depending on the # of clds
+
+Files gen. data -> npy files -> Files that use npy files (for plotting, calculations)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+other files: older scripts are less useful or practice scripts
